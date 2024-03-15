@@ -1,0 +1,16 @@
+name: add event
+
+on:
+  issues
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: add event to my blog
+        uses: fzdwx/add-event-to-myblog@xxx
+        with:
+          token: ${{ secrets.EVENT_TOKEN }}
+          issueNumber: ${{ github.event.issue.number }}
